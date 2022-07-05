@@ -1,0 +1,11 @@
+<nav class="bottom-nav" [ngClass]="{'hide-nav' : hideNav}">
+  <div class="bottom-nav-container">
+    <a *ngFor="let button of buttons" [routerLink]="button.route" routerLinkActive="route-active" [routerLinkActiveOptions]="{ exact: true }" >
+      
+      <div [ngClass]="{'notify' : button.notify}">
+        <img [src]="button.image" />
+      </div>  
+      {{button.title}}
+    </a>
+  </div>
+</nav>

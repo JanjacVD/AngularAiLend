@@ -1,0 +1,29 @@
+<app-balance></app-balance>
+<div *ngIf="marketLoaded; else loadingScreen">
+  <div class="banner">
+    <p>
+      *Raiffeisen Bank: Interest rate reduced by 2% for perosnal loans. - *GOTECH 50%
+    </p>
+  </div>
+  <div class="categories">
+    <button *ngFor="let category of categories" [ngClass]="{'category-active': category === activeCategory}"
+      (click)="changeCategory(category)">
+      {{category}}
+    </button>
+  </div>
+  <div class="shop">
+    <div class="shop-item" *ngFor="let item of displayedMarket">
+      <div class="details">
+        <img [src]="item.image" />
+        <h4 style="text-align:left;">{{item.title}}</h4>
+        <h4>PRODUCER</h4>
+      </div>
+      <div class="price-details">
+        {{item.price.toFixed(2)}}
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loadingScreen>
+  <h1 style="color:white ;">LOADING...</h1>
+</ng-template>

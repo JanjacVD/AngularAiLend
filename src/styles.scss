@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./app/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Livvic&display=swap");
+body {
+  background-color: $black;
+  font-family: "Livvic", sans-serif;
+}
+.row-break {
+  flex-basis: 100%;
+  height: 0;
+  width: 100%;
+}
+.currency {
+  font-size: 0.6rem;
+  color: $lightGrey;
+  font-weight: 200;
+}
+.text-green {
+  color: $lightGreen !important;
+}
+.text-gold {
+  color: $gold !important;
+}
+.text-red {
+  color: $red !important;
+}
+.text-blue {
+  color: $blue !important;
+}

@@ -1,0 +1,28 @@
+<div class="loans">
+
+  <div class="loans-box">
+    <div><span class="text-green loans-box-title">Total loans</span>
+      <p class="loans-box-amount text-gold">{{totalLoans}} <span class="currency">LEKE</span></p>
+    </div>
+  </div>
+<div class="progress">
+  <div class="progress-bar">
+    <div class="progress-bar-progress" [ngStyle]="{'width':percent}"></div>
+  </div> 
+  <p class="progress-text">Limit {{limit}} <span class="currency">LEKE</span></p>
+</div>
+  
+  <span class="row-break"></span>
+  <div class="loans-box">
+    <div><span class="loans-box-title">Paid</span>
+      <p class="loans-box-amount text-blue">{{paid}} <span class="currency">LEKE</span></p>
+    </div>
+  </div>
+
+  <div class="loans-box">
+    <div><span class="loans-box-title">Next Installment</span>
+      <p class="loans-box-amount text-red">{{nextInstallment}} <span class="currency">LEKE</span></p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,63 @@
+@import "../variables.scss";
+.loans {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .loans-box {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    background-color: $darkerBlack;
+    margin: 0.3rem 0;
+    height: auto;
+    max-height: 50px;
+    align-content: center;
+    position: relative;
+    padding: 0.4rem 1rem;
+    .loans-box-title {
+      font-weight: 700;
+      position: relative;
+      width: 100%;
+      color: $lightGrey;
+    }
+    .loans-box-amount {
+      font-weight: 600;
+      position: relative;
+      &::before {
+        width: 100%;
+        position: absolute;
+        top: -8px;
+        left: 0;
+        content: " ";
+        background-color: $lightGrey;
+        height: 1px;
+      }
+    }
+  }
+  .progress {
+    color: $lightGrey;
+    text-align: right;
+    .progress-text {
+      margin-top: 0;
+      font-weight: 700;
+    }
+    .progress-bar {
+      position: relative;
+      width: 200px !important;
+      background-color: $darkerBlack;
+      border-radius: 22px;
+      height: 25px !important;
+      margin-top: 0.4rem;
+      width:0;
+      .progress-bar-progress {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-radius: inherit;
+        background-color: $lightGreen;
+        height: inherit;
+      }
+    }
+  }
+}
