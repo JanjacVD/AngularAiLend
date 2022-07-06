@@ -1,0 +1,27 @@
+<div class="shop-item">
+  <div class="details" [routerLink]="'/item/'+item.id">
+    <img [src]="item.image" />
+    <h4 style="text-align:left;">{{item.title}}</h4>
+    <h4>PRODUCER</h4>
+  </div>
+  <div class="price-details">
+    <div class="price-info">
+      <h4>Price</h4>
+      <div class="price text-gold">
+        {{item.price.toFixed(2)}}
+        <span class="currency">LEKE</span>
+      </div>
+    </div>
+    <div class="price-info">
+      <h4 class="pr-1">Starting from</h4>
+      <div class="price text-green">
+        {{((item.price) / 36).toFixed(2)}}
+        <!-- Calculate the avg monthly rate -->
+        <span class="currency">LEKE / monthly</span>
+      </div>
+      <div class="blank"></div>
+      <button class="buy-btn" (click)="placeOrder(item)">Buy Now</button>
+    </div>
+  </div>
+  <app-succes [status]="orderPlaced"></app-succes>
+</div>

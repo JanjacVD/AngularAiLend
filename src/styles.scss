@@ -10,12 +10,13 @@ body {
   width: 100%;
 }
 .currency {
-  font-size: 0.6rem;
-  color: $lightGrey;
-  font-weight: 200;
+  font-size: 0.6rem !important;
+  color: $lightGrey !important;
+  font-weight: 200 !important;
 }
 .text-green {
   color: $lightGreen !important;
+  font-weight: 700;
 }
 .text-gold {
   color: $gold !important;
@@ -25,4 +26,26 @@ body {
 }
 .text-blue {
   color: $blue !important;
+}
+.pr-1{
+  padding-right: 1rem;
+}
+.blank{
+  display:none
+}
+.buy-btn {
+  all: unset;
+  cursor: pointer;
+  white-space: nowrap;
+  color: $lightGrey;
+  background-color: $darkGreen;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 0.5rem;
+  padding: 0.2rem 2rem;
+  transition: 0.5s;
+  &:hover, &:active {
+    transition: 0.5s;
+    box-shadow: 1px 2px;
+  }
 }

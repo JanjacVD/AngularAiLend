@@ -1,0 +1,50 @@
+<app-balance></app-balance>
+<div class="market-item" *ngIf="marketItem != null; else loading">
+  <img [src]="activeImg" />
+  <div class="image-carousel">
+    <img [src]="marketItem.image" (click)="changeActiveImage(marketItem.image)"
+      [ngClass]="{'img-active' : activeImg === marketItem.image}" />
+    <img *ngFor="let image of marketItemImages" [src]="image.thumbnail" (click)="changeActiveImage(image.image)"
+      [ngClass]="{'img-active' : activeImg === image.image}" />
+  </div>
+  <h2>{{marketItem.title}}</h2>
+  <div class="item-pricing">
+    <p class="text-green">{{(marketItem.price / 36).toFixed(2)}} <span class="currency">LEKE / monthly</span></p>
+  </div>
+  <p class="item-desc">
+    {{marketItem.description}}
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi beatae labore nostrum, quo soluta ex autem nihil
+    animi earum, quisquam amet tempora alias deserunt architecto consectetur omnis iste? Iure sit error aliquam commodi
+    quae perferendis, officiis quo voluptatum saepe illo praesentium libero repudiandae quibusdam totam tempora
+    delectus? Soluta corporis inventore delectus rem tempore. Quasi omnis facilis sit velit. Mollitia vel officia
+    tempora provident amet, pariatur excepturi, quo odit est praesentium maiores iure possimus alias ullam soluta
+    voluptatibus dignissimos odio dolorem quaerat! Nulla eos nobis ut recusandae nesciunt corporis quia unde adipisci
+    amet quam ratione, possimus voluptas voluptatibus facere atque dolorum? Nobis eveniet ipsam modi, eius laboriosam
+    voluptatem facilis quos velit beatae commodi sapiente unde consequatur perspiciatis deleniti dolor omnis quam fugit
+    aliquid, mollitia dolorum dolores sunt? Debitis eum vitae dolor possimus. Maiores iste dolorum provident repellat
+    voluptates accusamus? Explicabo, expedita ipsa quaerat illo dignissimos atque obcaecati placeat ipsam perspiciatis,
+    nihil aliquid corrupti quas? Dolorem eos velit maxime similique, rem deleniti unde eveniet consectetur eum
+    distinctio. Facere illum quibusdam fugit quisquam quia vero vitae pariatur. Rerum consequuntur iusto provident odio
+    saepe consequatur nesciunt laboriosam facere doloribus aperiam, voluptate quae nostrum est architecto nihil?
+    Debitis, veniam aliquam. Veritatis fugit aliquid soluta labore?
+  </p>
+  <div class="grid-regulator">
+    <button class="buy-btn" (click)="placeOrder(marketItem)">Complete Order</button>
+    <div class="blank"></div>
+  </div>
+  <div class="tags">
+    <p><span>SKU:</span> TV475</p>
+    <p><span>Category:</span> {{marketItem.category}}</p>
+    <p><span>SKU:</span> ONLINE OFFER</p>
+  </div>
+  <h3 *ngIf="similarMarket != null">You may also like:</h3>
+  <div class="item-carousel" *ngIf="similarMarket != null">
+    <div class="carousel-item-container" *ngFor="let item of similarMarket">
+    <app-item [item]="item"></app-item>
+    </div>
+  </div>
+  <app-succes [status]="orderPlaced"></app-succes>
+</div>
+<ng-template #loading>
+  <h1 style="color:white">Loading...</h1>
+</ng-template>

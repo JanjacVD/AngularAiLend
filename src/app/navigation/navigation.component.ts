@@ -9,30 +9,35 @@ export class NavigationComponent {
     {
       title: 'Market',
       image: '../assets/img/market.svg',
+      imageActive: '../assets/img/market-active.svg',
       notify: false,
       route: '/',
     },
     {
       title: 'My Loans',
       image: '../assets/img/loans.svg',
+      imageActive: '../assets/img/loans-active.svg',
       notify: false,
       route: '/loans',
     },
     {
       title: 'Buy with AiLend',
       image: '../assets/img/buy.svg',
+      imageActive: '../assets/img/buy-active.svg',
       notify: true,
       route: '/buy',
     },
     {
       title: 'News',
       image: '../assets/img/news.svg',
+      imageActive: '../assets/img/news-active.svg',
       notify: true,
       route: '/news',
     },
     {
       title: 'Account',
       image: '../assets/img/account.svg',
+      imageActive: '../assets/img/account-active.svg',
       notify: true,
       route: '/account',
     },
@@ -44,11 +49,10 @@ export class NavigationComponent {
     this.newScroll = window.pageYOffset;
     if (this.oldScroll < this.newScroll) {
       this.hideNav = true;
-    }
-    else{
+    } else {
       this.hideNav = false;
     }
-    this.oldScroll = this.newScroll
+    this.oldScroll = this.newScroll;
     return;
   }
 }

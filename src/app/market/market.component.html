@@ -12,16 +12,7 @@
     </button>
   </div>
   <div class="shop">
-    <div class="shop-item" *ngFor="let item of displayedMarket">
-      <div class="details">
-        <img [src]="item.image" />
-        <h4 style="text-align:left;">{{item.title}}</h4>
-        <h4>PRODUCER</h4>
-      </div>
-      <div class="price-details">
-        {{item.price.toFixed(2)}}
-      </div>
-    </div>
+    <app-item *ngFor="let item of displayedMarket" [item]="item"></app-item>
   </div>
 </div>
 <ng-template #loadingScreen>

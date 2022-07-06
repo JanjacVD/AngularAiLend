@@ -10,6 +10,9 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
 import { BalanceComponent } from './balance/balance.component';
 import { MarketService } from './market.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MarketItemComponent } from './market-item/market-item.component';
+import { ItemComponent } from './item/item.component';
+import { SuccesComponent } from './succes/succes.component';
 
 
 @NgModule({
@@ -20,6 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     MarketComponent,
     ShopItemComponent,
     BalanceComponent,
+    MarketItemComponent,
+    ItemComponent,
+    SuccesComponent,
   ],
   imports: [
     HttpClientModule,

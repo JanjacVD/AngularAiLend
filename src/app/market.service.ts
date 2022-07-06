@@ -22,4 +22,8 @@ export class MarketService {
     //Fetch the data and return it
     return this.http.get<MarketItem[]>('https://fakestoreapi.com/products');
   }
+  getSingleItem(id: any) {
+    //Usually we'd work with slugs for beeter user expirience
+    return this.http.get<MarketItem>('https://fakestoreapi.com/products/'+id);
+  }
 }

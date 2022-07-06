@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BalanceComponent } from '../balance/balance.component';
 import { MarketService } from '../market.service';
+import { ItemComponent } from '../item/item.component';
 
 interface MarketItem {
   category: string;
@@ -24,10 +25,10 @@ export class MarketComponent implements OnInit {
   constructor(private marketService: MarketService) {}
   changeCategory(cat: string) {
     this.activeCategory = cat;
-    this.displayedMarket = this.market.filter(m => {
+    this.displayedMarket = this.market.filter((m) => {
       return m.category == this.activeCategory;
     });
-    return this.marketLoaded = true;
+    return (this.marketLoaded = true);
   }
   ngOnInit() {
     this.marketService.getItems().subscribe((data) => {
